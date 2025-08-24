@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "Site Relevance Checker",
+  "version": "1.0",
+  "description": "Asks if each new website is relevant to you",
+
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "<all_urls>"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["popup.css"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "web_accessible_resources": [
+    "popup.html"
+  ]
+}
